@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+
+</html>
+<style>
+    div {
+        width: 100px;
+        height: 50px;
+        border: 1px solid #000;
+        margin: 10px;
+    }
+   
+</style>
+<script>
+    document.querySelectorAll('div').forEach(function (item, index) {
+        item.onclick = function () {
+            this.style.background = `#${Math.random().toString().slice(2, 8)}`
+            //    console.log(Math.random().toString(12).slice(2,8))
+            
+        }
+    })                                                      
+</script>

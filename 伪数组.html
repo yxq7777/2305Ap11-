@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    const a=['刘德华','张学友','周星驰']
+    function name() {
+        console.log(arguments)
+    }
+    name(...name)
+    const result=[1,2,3,4,5]
+    const tow=[...a,...result]//数组合并
+    console.log(tow)
+</script>

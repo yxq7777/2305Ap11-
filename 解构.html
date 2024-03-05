@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+//     let arr = ['小刘', '小明', '小可', '孙策']
+//     let [a, b, c] = arr
+//     console.log(a)
+//     let obj = {
+//         name: '孙晨',
+//         age: 18,
+//         say: function () {
+//             alert('大帅逼孙晨')
+//         }
+//     }
+//     let { name: data, age } = obj
+//     let { say } = obj
+//     // console.log(name, age)
+//     // console.log(say)
+//     // say()
+//     // console.log(data)
+//     let ca = `   <div>
+// <p>哈哈哈哈</p>
+//     </div>`
+
+//     document.getElementsByTagName('body')[0].innerHTML = ca
+
+
+
+//     let name = '清华'
+//     let change = function () {
+//         console.log('可改变你')
+//     }
+//     const school = {
+//         name,
+//         change,
+//         improve() {
+//             console.log('hahahha')
+//         }
+//     }
+//     console.log(school)
+// 改变this
+let fns=()=>{
+    console.log(this,53)
+}
+    // let obj={
+    //     name:'aaa',
+    //     say:function(){
+    //         console.log(this,58)
+    //     }
+    // }
+    let name=(params)=> {
+        console.log(this)
+    }
+    let a=[1,2]
+    name(a)
+    name.apply()
+
+
+// function Person(name,age){
+//     this.name=name
+//     this.age=age
+// }
+// //原型改变
+// Person.prototype.sayHai=function(){
+//     alert('孙晨大帅哥')
+// }
+// console.log(Person.prototype)
+// const sexPerson=new Person('孙晨',18)
+// const sexPersona=new Person('孙晨哈哈哈',18)
+
+</script>

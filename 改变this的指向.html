@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    // let obj = {
+    //     name: '李四',
+    //     say: function () {
+    //         console.log(this)
+    //     },
+    // }
+    // let a = [1, 2, 3]
+    // let b = [3, 2, 1]
+    // let c = ['哈哈']
+    // obj.say.call(a)
+    // obj.say.apply(b)
+    // let obj1 = obj.say.bind(c)
+    // obj1()
+
+
+
+    // function fn() {
+    //     console.log(this)
+    //     let m = () => {
+    //         console.log(this,18)
+    //     }
+    //     return m
+    // }
+
+
+    // let k = { a: 1, fn:fn }
+
+    // k.fn()()
+    // let aaa='哈哈哈'
+    // fn.call(aaa)()
+
+
+
+
+    let name = 'window'
+    //A所在的作用域是全局作用域
+    // let A={
+    //     name:'A',
+    //     sayhello:()=>{
+    //         console.log(this)//指向window
+    //     }
+    // }
+    // A.sayhello()
+    let A = {
+        name: 'A',
+        sy: function () {
+            console.log(this)
+        //   let sayhello=() => {
+        //         // console.log(this)//指向window
+        //     }
+        //     return sayhello
+        },
+    }     
+    let s=A.sy()    
+    // s()                                                                                                                                       
+   let B={
+    name:'B'
+   }
+//    s.call(B)
+// A.sy()
+</script>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>随机点名</h1>
+    <h1 class="time"></h1>
+    <div class="v">
+        <div class="dv" style="margin-right: 20px;">
+            <div class="te">哈哈哈哈哈哈哈哈哈哈</div>
+        </div>
+        <div>
+            <button id="bu" >随机点名</button>
+            <button class="li">随机点两名</button>
+            <button class="nan">男生点名</button>
+            <button class="nv">女生点名</button>
+            <div class="w"></div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+
+    //时间
+    let ts = document.querySelector('.time')
+
+    setInterval(() => {
+        let time = new Date().toLocaleString()
+        ts.innerHTML = time
+    }, 1000);
+    let arr = [{ name: '孙晨', sex: 1 }, { name: '周杰伦', sex: 1 }, { name: '范冰冰', sex: 0 }, { name: '胡歌', sex: 1 }, { name: '赵丽颖', sex: 0 }, { name: '王宝强', sex: 1 }, { name: '陈小春', sex: 1 }, { name: '林俊杰', sex: 1 }, { name: '王祖贤', sex: 1 }, { name: '迪丽热巴', sex: 0 }, { name: '杨幂', sex: 0 },
+    { name: '林正英', sex: 1 }, { name: '蔡徐坤', sex: 1 }, { name: '刘亦菲', sex: 0 }, { name: '霍建华', sex: 1 }, { name: '彭于晏', sex: 1 }, { name: '黄文龙', sex: 1 }, { name: '韩昊天', sex: 1 }, { name: '哈利波特', sex: 1 }, { name: '薛之谦', sex: 1 }
+    ]
+    let te = document.querySelector('.te')
+    function fn() {
+        let a = ''
+        arr.forEach(function (item, index) {
+            a += `
+        <div class="te">${item.name}</div>
+        `
+            te.innerHTML = a
+        })
+
+    }
+    fn()
+  
+
+    let w = document.querySelector('.w')
+    let bu = document.querySelector('#bu')
+    let name = ''
+    bu.onclick = function () {
+
+        let a = parseInt(Math.random() * arr.length)
+        console.log(a)
+        arr.forEach((item, index) => {
+            if (a == index) {
+                w.innerHTML = item.name
+            }
+        })
+    }
+
+    let nan = document.querySelector('.nan')
+    let arr1 = []
+    arr.forEach(item => {
+        if (item.sex == 0) {
+            arr1.push(item.name)
+        }
+    })
+    let arr2 = []
+    arr.forEach(item => {
+        if (item.sex == 1) {
+            arr2.push(item.name)
+        }
+    })
+    nan.onclick = function () {
+        let a = parseInt(Math.random() * arr2.length)
+        console.log(a)
+        arr2.forEach((item, index) => {
+            if (a == index) {
+                w.innerHTML = item
+
+            }
+        })
+    }
+  
+    let nv = document.querySelector('.nv')
+
+    nv.onclick = function () {
+
+        let a = parseInt(Math.random() * arr1.length)
+
+        arr1.forEach((item, index) => {
+            if (a == index) {
+                w.innerHTML = item
+            }
+        })
+    }
+    let li = document.querySelector('.li')
+    let arr3 = []
+    li.onclick = function () {
+        let arrs = arr
+
+
+        // console.log(arr);
+        let a = parseInt(Math.random() * arrs.length)
+        console.log(a)
+        let c = parseInt(Math.random() * arrs.length)
+        console.log(c, '我是')
+        if (a == c) {
+            if (a == 0) {
+                a += 1
+                console.log(a)
+            } else {
+                a -= 1
+            }
+        }
+        arr3 = []
+        arrs.forEach((item, index) => {
+            if (a == index) {
+                arr3.push(item.name)
+            }
+            if (c == index) {
+                arr3.push(item.name)
+            }
+        });
+
+        let a1 = ''
+        arr3.forEach(item => {
+
+            a1 += `<span>${item}</span>`
+
+        })
+        w.innerHTML = a1
+        
+    }
+</script>
+
+
+
+
+
+<style>
+    body {
+        width: 100vw;
+        height: 100vh;
+        background-image: url(./0122a15d22b574a801213763e36eba.jpg@2o.jpg);
+        background-size: 100% 100%;
+    }
+
+    .dv {
+        width: 800px;
+        height: 300px;
+      
+        background: -webkit-linear-gradient(left, #147B96, #E6D205 25%, #e63e31 50%, #E6D205 75%, #147B96);
+        color: transparent;
+        background-clip: text;
+        background-size: 200% 100%;
+        animation: masked-animation 1s infinite linear;
+        display: flex;
+        
+
+    }
+
+    h1 {
+        margin: auto;
+        width: 300px;
+        background: -webkit-linear-gradient(left, #147B96, #E6D205 25%, #147B96 50%, #E6D205 75%, #147B96);
+        color: transparent;
+        background-clip: text;
+        background-size: 200% 100%;
+        animation: masked-animation 1s infinite linear;
+
+    }
+
+    @keyframes masked-animation {
+        0% {
+            background-position: 0 0;
+        }
+
+        100% {
+            background-position: -100% 0;
+        }
+    }
+
+    .te {
+        display: flex;
+        margin: 10px;
+        flex-wrap: wrap;
+    }
+
+    .w {
+        width: 300px;
+        height: 200px;
+        background: -webkit-linear-gradient(left, #147B96, #E6D205 25%, #147B96 50%, #E6D205 75%, #147B96);
+        color: transparent;
+        background-clip: text;
+        background-size: 200% 100%;
+        animation: masked-animation 1s infinite linear;
+    }
+
+    .v {
+        display: flex;
+    }
+
+    span {
+        margin-right: 20px;
+    }
+</style>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    function add(a, c = 10, b) {
+        return a + b + c
+    }
+    let result = add(1, 2)//输出NAN
+    console.log(result)
+
+//解构赋值集合
+    function name({ host = '123', username, password, port }) {
+        console.log(host)
+        console.log(username)
+        console.log(password)
+        console.log(post)
+    }
+    name({ host: '哈哈哈', username: '名字', password: '密码', post: '2345' })
+</script>

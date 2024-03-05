@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    const k=['唐僧','孙悟空','猪八戒','沙僧']
+    for(let v of k){
+        console.log(v)
+    }
+    let iterator=k[Symbol.iterator]()
+    console.log(iterator)
+    console.log(iterator.next())//{value: '唐僧', done: false} value当前值.done是否循环结束
+    console.log(iterator.next())
+    console.log(iterator.next())
+    console.log(iterator.next())
+
+
+//生成器 底层原理是iterator
+    function *name() {
+        yield '孙晨'
+        yield '厉害'
+        yield '哈哈'
+    }
+    let iterato=name()
+    console.log(iterato)
+    console.log(iterato.next())
+    console.log(iterato.next())
+    console.log(iterato.next())
+    console.log(iterato.next())
+</script>
